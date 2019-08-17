@@ -2,9 +2,12 @@ import React from 'react';
 import './App.scss';
 
 import Header from './components/header/header.component';
-import SignInAndSignUp from './components/sign-in-and-sign-up/sign-in-and-sign-up.component';
+
+import SignUp from './components/sign-up/sign-up.component';
+import SignIn from './components/sign-in/sign-in.component';
 
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+import { Switch, Route } from 'react-router-dom';
 
 class App extends React.Component {
   state = {
@@ -47,10 +50,22 @@ class App extends React.Component {
 
   render() {
     const { currentUser } = this.state;
+    const Home = () => {
+      return (
+        <div>
+          <h1>Welcome to Firebase Auth</h1>
+        </div>
+      );
+    };
+
     return (
       <div className="App">
         <Header currentUser={currentUser} />
-        <SignInAndSignUp />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/signin" component={SignIn} />
+          <Route path="/signup" component={SignUp} />
+        </Switch>
       </div>
     );
   }
