@@ -1,6 +1,7 @@
 import React from 'react';
 
 import CustomButton from '../custom-button/custom-button.component';
+import FormInput from '../form-input/form-input.component';
 
 import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
 
@@ -59,41 +60,41 @@ class SignUp extends React.Component {
         <span>Sign up with your email &amp; password</span>
         <form onSubmit={handleSubmit}>
           <label htmlFor="displayName">Display Name:</label>
-          <input
+          <FormInput
             type="text"
             name="displayName"
             value={displayName}
             onChange={handleChange}
             required
           />
-          <br />
+
           <label htmlFor="email">Email:</label>
-          <input
+          <FormInput
             type="email"
             name="email"
             value={email}
             onChange={handleChange}
             required
           />
-          <br />
+
           <label htmlFor="password">Password:</label>
-          <input
+          <FormInput
             onChange={handleChange}
             type="password"
             name="password"
             value={password}
             required
           />
-          <br />
+
           <label htmlFor="confirmPassword">Confirm Password:</label>
-          <input
+          <FormInput
             onChange={handleChange}
             type="password"
             name="confirmPassword"
             value={confirmPassword}
             required
           />
-          <br />
+
           <CustomButton type="submit"> Sign Up </CustomButton>
         </form>
       </section>

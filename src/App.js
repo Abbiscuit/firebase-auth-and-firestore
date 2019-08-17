@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.scss';
-import SignIn from './components/sign-in/sign-in.component';
+
 import Header from './components/header/header.component';
+import SignInAndSignUp from './components/sign-in-and-sign-up/sign-in-and-sign-up.component';
 
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
-import SignUp from './components/sign-up/sign-up.component';
 
 class App extends React.Component {
   state = {
@@ -50,10 +50,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header currentUser={currentUser} />
-        <div className="sign-in-and-sign-up">
-          <SignUp />
-          <SignIn />
-        </div>
+        <SignInAndSignUp />
       </div>
     );
   }
