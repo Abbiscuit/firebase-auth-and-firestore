@@ -1,0 +1,20 @@
+.custom-button {
+  padding: 10px;
+  border-radius: 6px;
+
+  &:hover {
+    background-color: #333;
+    color: #fff;
+    border: none;
+  }
+
+  &.google-sign-in {
+    background-color: #4285f4;
+    color: #fff;
+
+    &:hover {
+      background-color: #347ae8;
+      border: none;
+    }
+  }
+}
